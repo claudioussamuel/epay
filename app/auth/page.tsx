@@ -10,7 +10,7 @@ export default function Auth() {
     <div className="bg-gray-50 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
       <div className="md:w-1/2 px-16">
         <h2 className='font-bold text-2xl'>
-          Login
+          Epay
         </h2>
         <p className="text-sm mt-4">
           Financial Freedom Awaits You
@@ -57,13 +57,15 @@ export default function Auth() {
         </Button>
         </form>
 
-        <p className="mt-5 text-xs border-b py-4">
+        <Button variant="ghost" className="mt-5 text-xs py-4 hover:scale-110 duration-100 hover:bg-transparent">
           Forgot your password?
-        </p>
+        </Button>
 
-        <div className="text-sm flex justify-between items-center mt-3" >
+        <hr className='mt-2'/>
+
+        <div className="text-sm flex justify-between items-center mt-6 " >
               <p className="mr-4">Don't have an account?</p>
-              <Button className="py-2 px-5 text-black bg-white border rounded-xl hover:scale-110 duration-100">Register</Button>
+              <Button variant="ghost"  className="hover:scale-110 duration-100 hover:bg-transparent" >Register</Button>
 </div>
       </div>
 
