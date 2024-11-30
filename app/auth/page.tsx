@@ -7,8 +7,8 @@ export default function Auth() {
   return (
     <main>
       <section className="bg-gray-50 min-h-screen flex items-center justify-center">
-    <div className="bg-gray-50 flex rounded-2xl shadow-lg max-w-3xl p-5">
-      <div className="sm:w-1/2 px-16">
+    <div className="bg-gray-50 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+      <div className="md:w-1/2 px-16">
         <h2 className='font-bold text-2xl'>
           Login
         </h2>
@@ -44,7 +44,7 @@ export default function Auth() {
 <Button 
        // disabled={!phoneNumber || isPending || resendCountdown > 0}
         //onClick={() => requestOpt()}
-        className="rounded-xl text-white py-2"
+        className="rounded-xl text-white py-2 hover:scale-105 duration-100"
         >
             {/* {
                 resendCountdown > 0 
@@ -57,15 +57,18 @@ export default function Auth() {
         </Button>
         </form>
 
-        <div className="mt-10 grid grid-cols-3 items-center text-gray-400">
-          <hr className="border-gray-400" />
-          <p className="text-center">OR</p>
-          <hr className="border-gray-400" />
-        </div>
+        <p className="mt-5 text-xs border-b py-4">
+          Forgot your password?
+        </p>
+
+        <div className="text-sm flex justify-between items-center mt-3" >
+              <p className="mr-4">Don't have an account?</p>
+              <Button className="py-2 px-5 text-black bg-white border rounded-xl hover:scale-110 duration-100">Register</Button>
+</div>
       </div>
 
-      <div className="sm:block hidden w-1/2 ">
-        <Image src={`/usdc.jpg`} alt='' width={800} height={800} className='rounded-2xl'/>
+      <div className="md:block hidden w-1/2 ">
+        <Image src={`/usdc.jpg`} alt='' width={1200} height={1200} className='rounded-2xl'/>
       </div>
     </div>
 
