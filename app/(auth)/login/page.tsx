@@ -1,22 +1,12 @@
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import Image from 'next/image'
-import React from 'react'
 
-export default function Auth() {
+export default function Login() {
   return (
-    <main>
-      <section className="bg-gray-50 min-h-screen flex items-center justify-center"
-          style={{ backgroundImage: "url('/bg.jpg')", backgroundSize: 'cover' }}>
-    <div className="bg-gray-50 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
-      <div className="md:w-1/2 px-16">
-        <h2 className='font-bold text-2xl'>
-          Epay
-        </h2>
-        <p className="text-sm mt-4">
-          Financial Freedom Awaits You
-        </p>
-        <form action="" className="flex flex-col gap-4">
+   <>
+     
+     <form action="" className="flex flex-col gap-4">
         <Input 
                 className="text-black p-2 mt-8 rounded-xl border"
                 placeholder='Email'
@@ -67,16 +57,9 @@ export default function Auth() {
         <div className="text-sm flex justify-between items-center mt-6 " >
               <p className="mr-4">Don't have an account?</p>
               <Button variant="ghost"  className="hover:scale-110 duration-100 hover:bg-transparent" >Register</Button>
-</div>
-      </div>
-
-      <div className="md:block hidden w-1/2 ">
-        <Image src={`/usdc.jpg`} alt='' width={1200} height={1200} className='rounded-2xl'/>
-      </div>
-    </div>
-
-   </section>
-    </main>
+        </div>
+   
+   </>
    
   )
 }
