@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import Link from 'next/link'
 export default function SignUp() {
   return (
     <>
@@ -57,14 +58,21 @@ export default function SignUp() {
        </form>
 
        <Button variant="ghost" className="mt-5 text-xs py-4 hover:scale-110 duration-100 hover:bg-transparent">
-         Forgot your password?
+        <Link href={"/forgotpassword"}>
+        Forgot your password?
+        </Link>
+        
        </Button>
 
        <hr className='mt-2'/>
 
        <div className="text-sm flex justify-between items-center mt-6 " >
              <p className="mr-4">Have an account?</p>
-             <Button variant="ghost"  className="hover:scale-110 duration-100 hover:bg-transparent" >Login</Button>
+             <Button variant="ghost"  className="hover:scale-110 duration-100 hover:bg-transparent" >
+              <Link href={`/login`}>
+              Login
+              </Link>
+              </Button>
        </div>
   
   </>
