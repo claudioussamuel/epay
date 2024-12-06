@@ -8,7 +8,7 @@ import {
   
     createUserWithEmailAndPassword,
     sendEmailVerification,
-    signOut
+  
 }
 
 from "firebase/auth"
