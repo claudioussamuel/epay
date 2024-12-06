@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="text-center">
-      <h1 className="font-bold text-center mb-5">
-        How to add one time password Phone Authentication
+    <main className="flex items-center justify-center text-center min-h-screen">
+      <h1 className="font-bold mb-5 text-5xl">
+         We are still working on it
       </h1>
 
-      <OtpLogin />
+     
     </main>
   )
 }
