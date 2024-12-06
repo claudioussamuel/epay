@@ -28,26 +28,21 @@ export default function SignUp() {
     e.preventDefault();
     setError(null); // Reset error state
     setIsLoading(true); // Set loading state to true
-    console.log("one")
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password); // Create user
-      console.log(userCredential)
+      
       await sendEmailVerification(userCredential.user); // Send email verification
-      console.log(await sendEmailVerification(userCredential.user))
       router.push("/verifyemail"); // Navigate to verification page
       setSuccess("Signup successful! Please check your email for verification."); // Set success message
-      } catch (error: any) {
-     
-        if (error.code === "auth/invalid-phone-number") {
-          setError("Invalid phone number. Please check the number");
-        
+    } catch (error: any) {
+      if (error.code === "auth/invalid-phone-number") {
+        setError("Invalid phone number. Please check the number");
       } else if (error.code == "auth/too-many-requests"){
-          setError("Too many request at a time");
-        
+        setError("Too many request at a time");
       }
-          else{
-              setError(error.message);
-          }
+      else{
+        setError(error.message);
+      }
     } finally {
       setIsLoading(false); // Reset loading state
     }
@@ -101,8 +96,7 @@ export default function SignUp() {
           {isLoading ? loadingIndicator : `SignUp`}
         </Button>
         {error && <p className="text-red-500">{error}</p>} {/* Display error message */}
-        {success && <p className="text-green-500">{success}</p>} {/* Display success message */}
-         {/* Show loading indicator */}
+        
       </form>
       <Button variant="ghost" className="mt-5 text-xs py-4 hover:scale-110 duration-100 hover:bg-transparent">
         <Link href={"/forgotpassword"}>
