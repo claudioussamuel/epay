@@ -93,7 +93,7 @@ export default function Login() {
         <hr className='mt-2'/>
 
         <div className="text-sm flex justify-between items-center mt-6 " >
-              <p className="mr-4">Don't have an account?</p>
+              <p className="mr-4">Dont have an account?</p>
               <Button variant="ghost"  className="hover:scale-110 duration-100 hover:bg-transparent" >
                 <Link href={'/signup'}>
                 Register
