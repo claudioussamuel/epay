@@ -22,8 +22,13 @@ export default function Login() {
     setError(null); // Reset error state
     setIsLoading(true); // Set loading state to true
     try {
-      await signInWithEmailAndPassword(auth, email, password); // Sign in user
-      router.push("/verifyemail");
+      const userCredential =  await signInWithEmailAndPassword(auth, email, password); // Sign in user
+      const user = userCredential.user; // Get user object
+      if (!user.emailVerified) { // Check if user is verified
+        router.replace("/verify"); // Redirect to verification page
+      } else {
+        router.replace("/"); // Redirect to home page
+      }
     } catch (error: any) {
       setError(error.message); // Set error message
     } finally {
