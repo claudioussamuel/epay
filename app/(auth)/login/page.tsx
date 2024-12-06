@@ -25,7 +25,7 @@ export default function Login() {
       const userCredential =  await signInWithEmailAndPassword(auth, email, password); // Sign in user
       const user = userCredential.user; // Get user object
       if (!user.emailVerified) { // Check if user is verified
-        router.replace("/verify"); // Redirect to verification page
+        router.replace("/verifyemail"); // Redirect to verification page
       } else {
         router.replace("/"); // Redirect to home page
       }
