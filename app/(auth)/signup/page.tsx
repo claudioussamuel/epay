@@ -1,5 +1,5 @@
 "use client";
-
+import { privateKeyToAccount } from "viem/accounts";
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
@@ -14,6 +14,7 @@ import {
 from "firebase/auth"
 import React, {FormEvent,useEffect,useState,useTransition} from "react"
 import { useRouter } from 'next/navigation'
+import { Hex } from "viem";
 
 
 export default function SignUp() {
@@ -34,6 +35,10 @@ export default function SignUp() {
       await sendEmailVerification(userCredential.user); // Send email verification
       router.push("/verifyemail"); // Navigate to verification page
       setSuccess("Signup successful! Please check your email for verification."); // Set success message
+      const privateKey = require("crypto").randomBytes(32).toString("hex")
+      const account = privateKeyToAccount(privateKey as Hex);
+
+      
     } catch (error: any) {
       if (error.code === "auth/invalid-phone-number") {
         setError("Invalid phone number. Please check the number");
