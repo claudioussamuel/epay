@@ -33,11 +33,11 @@ export default function SignUp() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password); // Create user
       
       await sendEmailVerification(userCredential.user); // Send email verification
-      router.push("/verifyemail"); // Navigate to verification page
+      //router.push("/verifyemail"); // Navigate to verification page
       setSuccess("Signup successful! Please check your email for verification."); // Set success message
       const privateKey = require("crypto").randomBytes(32).toString("hex")
-      const account = privateKeyToAccount(privateKey as Hex);
-
+      const account = privateKeyToAccount(`0x${privateKey}`);
+      
       
     } catch (error: any) {
       if (error.code === "auth/invalid-phone-number") {
