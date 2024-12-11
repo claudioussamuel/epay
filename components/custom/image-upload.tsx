@@ -137,7 +137,7 @@ export default function ImageUpload() {
     cancelSource: CancelTokenSource
   ) => {
     return axios.post(
-      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload`,
+      '/api/upload',
       formData,
       {
         onUploadProgress,
