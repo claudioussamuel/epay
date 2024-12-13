@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="flex justify-center items-center min-h-screen flex-col space-y-4">
       <h1 className="text-5xl font-semibold">Upload Proof</h1>
       <p className="text-muted-foreground">Send Mobile Money To 0552515809</p>
       <div className="flex gap-4">
