@@ -39,4 +39,5 @@ function CustomColorDemo() {
   );
 }
 
-export { DefaultDemo, CustomColorDemo };
+export default DefaultDemo;
+// export { CustomColorDemo };
